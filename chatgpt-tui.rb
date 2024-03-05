@@ -5,24 +5,24 @@
 class ChatgptTui < Formula
   desc ""
   homepage "https://github.com/tearingItUp786/chatgpt-tui"
-  version "0.1.12"
+  version "0.1.14"
   depends_on :macos
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.12/chatgpt-tui_0.1.12_darwin_amd64.zip"
-      sha256 "4f6523fe75b2af11f61ea400835788fdaede7327fa048b68f15ea7200418276d"
+    if Hardware::CPU.arm?
+      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.14/chatgpt-tui_0.1.14_darwin_arm64.zip"
+      sha256 "80e3b63562d3d94a197ab40891cc29c082c84ac5a2e335ea6c72304221810577"
 
       def install
-        bin.install "golang"
+        bin.install "chatgpt-tui"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.12/chatgpt-tui_0.1.12_darwin_arm64.zip"
-      sha256 "daf3ad36b9f3ebd57df264b8f30205c4545a68d1392d11b5b1a92883439246b9"
+    if Hardware::CPU.intel?
+      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.14/chatgpt-tui_0.1.14_darwin_amd64.zip"
+      sha256 "d0cac50609bda712371285f7d5e868f3574398830905f1064791b1cacb73d14d"
 
       def install
-        bin.install "golang"
+        bin.install "chatgpt-tui"
       end
     end
   end
