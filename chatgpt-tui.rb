@@ -5,42 +5,24 @@
 class ChatgptTui < Formula
   desc ""
   homepage "https://github.com/tearingItUp786/chatgpt-tui"
-  version "0.1.3"
+  version "0.1.11"
+  depends_on :macos
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.3/chatgpt-tui_Darwin_x86_64.tar.gz"
-      sha256 "7fa53cc3d322f5b6a026fb20bc21c4f7673926e160fcf0f170c2f20778c10599"
+    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.11/chatgpt-tui_0.1.11_darwin_amd64.zip"
+    sha256 "0f420061196285af19a0b59a701ce10e4c458aa80231419f2fd5a21b5c6d269e"
 
-      def install
-        bin.install "chatgpt-tui"
-      end
+    def install
+      bin.install "golang"
     end
+
     if Hardware::CPU.arm?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.3/chatgpt-tui_Darwin_arm64.tar.gz"
-      sha256 "fea871cbb1249d1ccdc28e74a9a2bb80ed2968b880803124ffa6e954a157a12c"
-
-      def install
-        bin.install "chatgpt-tui"
-      end
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.3/chatgpt-tui_Linux_x86_64.tar.gz"
-      sha256 "2f45e1369d3fc961320f6fb76a8737b5c43ebc97c62281e8e4f51e92a779b4b2"
-
-      def install
-        bin.install "chatgpt-tui"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.1.3/chatgpt-tui_Linux_arm64.tar.gz"
-      sha256 "f0de3c4d00506c2ec32103b5946ed5c0f0ff8dd20dd728cd9ce197c5ac794c94"
-
-      def install
-        bin.install "chatgpt-tui"
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the ChatgptTui
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
