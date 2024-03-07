@@ -11,7 +11,7 @@ class ChatgptTui < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.3.0/chatgpt-tui_0.3.0_darwin_arm64.zip"
-      sha256 "0c8df7a7bcb10763908a44d41df5423070bf8fbd5ea6ed5652c0967a24782efb"
+      sha256 "c2a5ac6822cf810445256bf1b32407e48251cab2b3fb948ee0aba1f7e4938c05"
 
       def install
         bin.install "chatgpt-tui"
@@ -19,7 +19,7 @@ class ChatgptTui < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.3.0/chatgpt-tui_0.3.0_darwin_amd64.zip"
-      sha256 "593e9f99fa57c8489eee5aba52e602ab582f5ad822180d18fc978f3d4cf03f60"
+      sha256 "2d17144e88354c69220dd6bc1cee4f3d319fa84203173b609e0e1d67c3232653"
 
       def install
         bin.install "chatgpt-tui"
