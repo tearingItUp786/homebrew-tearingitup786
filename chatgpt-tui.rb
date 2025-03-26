@@ -5,20 +5,20 @@
 class ChatgptTui < Formula
   desc ""
   homepage "https://github.com/tearingItUp786/chatgpt-tui"
-  version "0.5.7"
+  version "0.5.8"
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.7/chatgpt-tui_0.5.7_darwin_arm64.zip"
-    sha256 "519f84c7898940a3b0932eca64390d1e8706821bb38aaccb5ac32f7ee511975f"
+    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.8/chatgpt-tui_0.5.8_darwin_arm64.zip"
+    sha256 "c87dcd9819963b93e86d1a4f313e064bdf9de36264fcaddd9ff4552790c945f6"
 
     def install
       bin.install "bin/chatgpt-tui"
     end
   end
   if Hardware::CPU.intel?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.7/chatgpt-tui_0.5.7_darwin_amd64.zip"
-    sha256 "3699e9d3386d6d9438424c9f526f2c86e331b989ecec274e23c287c4099f8391"
+    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.8/chatgpt-tui_0.5.8_darwin_amd64.zip"
+    sha256 "099fd623f0ab7ef2cf052bd74905d7d57fc907a9e5a69496b361178c7ebc1a43"
 
     def install
       bin.install "bin/chatgpt-tui"
