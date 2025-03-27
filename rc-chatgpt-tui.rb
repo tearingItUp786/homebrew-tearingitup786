@@ -5,23 +5,27 @@
 class RcChatgptTui < Formula
   desc ""
   homepage "https://github.com/tearingItUp786/chatgpt-tui"
-  version "0.5.6-rc"
+  version "0.5.12-rc1"
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.6-rc/chatgpt-tui_0.5.6-rc_darwin_arm64.zip"
-    sha256 "6a68de6e88f43b7fe045433c6eead5db73f5180e13aa28cec04377ad2374e84d"
+    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.12-rc1/chatgpt-tui_0.5.12-rc1_darwin_arm64.zip"
+    sha256 "4ea85f585b7129bcb8a9323f29279d9d1ea054cd367ad5abd731da6687863ee5"
 
     def install
       bin.install "bin/rc-chatgpt-tui"
     end
   end
   if Hardware::CPU.intel?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.6-rc/chatgpt-tui_0.5.6-rc_darwin_amd64.zip"
-    sha256 "599fbac76812089e836c11b5ccbfa14d70850434202c5a9aba13074cfd46c926"
+    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.12-rc1/chatgpt-tui_0.5.12-rc1_darwin_amd64.zip"
+    sha256 "d1aeaf6f2396d9ac47d4d139dce986558797d51f644b2aaf7c8df7e7e2a65ce6"
 
     def install
       bin.install "bin/rc-chatgpt-tui"
     end
+  end
+
+  def post_install
+    opoo "⚠︎ rc-chatgpt-tui is deprecated and will be removed in the future. Use rc-nekot instead."
   end
 end
