@@ -13,31 +13,31 @@ class RcNekot < Formula
     sha256 "fa46e580183062f0cadd0870c31434a8940226617971ba83a5b0e2aaa400edfc"
 
     def install
-      bin.install "rc-nekot" => "rc-nekot-unwrapped"
+        bin.install "rc-nekot" => "rc-nekot-unwrapped"
 
-      (bin/"rc-nekot").write <<~EOS
-        #!/bin/bash
-        export NEKOT_APP_DIR=chatgpt-tui
-        exec "#{bin}/rc-nekot-unwrapped" "$@"
-      EOS
+        (bin/"rc-nekot").write <<~EOS
+          #!/bin/bash
+          export NEKOT_APP_DIR=chatgpt-tui
+          exec "$(dirname "$0")/rc-nekot-unwrapped" "$@"
+        EOS
 
-      chmod 0755, bin/"rc-nekot"
-    end
+        chmod 0755, bin/"rc-nekot"
+      end
   end
   if Hardware::CPU.intel?
     url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.12-rc1/rc-nekot_chatgpt-tui_0.5.12-rc1_darwin_amd64.zip"
     sha256 "a6ea5714d6e55f811465a4aad1c6b7a100c65713629dae5735c0102bf73c1a96"
 
     def install
-      bin.install "rc-nekot" => "rc-nekot-unwrapped"
+        bin.install "rc-nekot" => "rc-nekot-unwrapped"
 
-      (bin/"rc-nekot").write <<~EOS
-        #!/bin/bash
-        export NEKOT_APP_DIR=chatgpt-tui
-        exec "#{bin}/rc-nekot-unwrapped" "$@"
-      EOS
+        (bin/"rc-nekot").write <<~EOS
+          #!/bin/bash
+          export NEKOT_APP_DIR=chatgpt-tui
+          exec "$(dirname "$0")/rc-nekot-unwrapped" "$@"
+        EOS
 
-      chmod 0755, bin/"rc-nekot"
-    end
+        chmod 0755, bin/"rc-nekot"
+      end
   end
 end
