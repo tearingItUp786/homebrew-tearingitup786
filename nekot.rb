@@ -5,20 +5,20 @@
 class Nekot < Formula
   desc ""
   homepage "https://github.com/tearingItUp786/chatgpt-tui"
-  version "0.5.11"
+  version "0.6.0"
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.11/nekot_0.5.11_darwin_arm64.zip"
-    sha256 "3abd56e5101443a4f4b2b842e7a78ece38e7ec7980935f52de47de96aab7cac2"
+    url "https://github.com/tearingItUp786/nekot/releases/download/v0.6.0/nekot_0.6.0_darwin_arm64.zip"
+    sha256 "67ed2c35420595863351152850c6d94e1f39e0921ca20d90583744cce332800f"
 
     def install
       bin.install "bin/nekot"
     end
   end
   if Hardware::CPU.intel?
-    url "https://github.com/tearingItUp786/chatgpt-tui/releases/download/v0.5.11/nekot_0.5.11_darwin_amd64.zip"
-    sha256 "06863fe82771d8fcd3f7df70eabeb9003a4a59cd24d42ce16c71b7fdd8da5e8d"
+    url "https://github.com/tearingItUp786/nekot/releases/download/v0.6.0/nekot_0.6.0_darwin_amd64.zip"
+    sha256 "0649980d313688f16cdfb6281c6d4ea3addb066511eadb061677e477c50b6094"
 
     def install
       bin.install "bin/nekot"
